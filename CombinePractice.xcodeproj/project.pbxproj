@@ -14,6 +14,7 @@
 		5C971E702530BF22004CCB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C971E6F2530BF22004CCB3C /* Assets.xcassets */; };
 		5C971E732530BF22004CCB3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C971E712530BF22004CCB3C /* LaunchScreen.storyboard */; };
 		5C971E7B2530BF59004CCB3C /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E7A2530BF59004CCB3C /* Employee.swift */; };
+		5C971E7D2530BFA5004CCB3C /* EmployeHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5C971E722530BF22004CCB3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C971E742530BF22004CCB3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C971E7A2530BF59004CCB3C /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeHttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				5C971E712530BF22004CCB3C /* LaunchScreen.storyboard */,
 				5C971E742530BF22004CCB3C /* Info.plist */,
 				5C971E7A2530BF59004CCB3C /* Employee.swift */,
+				5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */,
 			);
 			path = CombinePractice;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				5C971E7B2530BF59004CCB3C /* Employee.swift in Sources */,
 				5C971E672530BF1B004CCB3C /* AppDelegate.swift in Sources */,
 				5C971E692530BF1B004CCB3C /* SceneDelegate.swift in Sources */,
+				5C971E7D2530BFA5004CCB3C /* EmployeHttpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
