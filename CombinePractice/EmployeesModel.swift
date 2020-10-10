@@ -16,23 +16,26 @@ class EmployeesModel{
         
         let employeePublisher = NotificationCenter.Publisher(center: .default, name: .getEmployees, object: nil)
         .map { (notification) -> [Employee] in
-            guard let result = notification.object as? EmployeeLoaderResult else {
-                print("type error")
-                return []
-            }
-            switch result{
-                
-            case let .success(employees):
-                return employees
-            case .failure(_):
-                print("failed to load employees")
-                return []
-            }
+            return self.mapEmployees(from: notification)
         }
-        
         
         employeePublisher.subscribe(subscriber)
         
         loader.load(publisher: employeePublisher)
+    }
+    
+    private func mapEmployees(from notification: NotificationCenter.Publisher.Output) -> [Employee]{
+        guard let result = notification.object as? EmployeeLoaderResult else {
+            print("type error")
+            return []
+        }
+        switch result{
+            
+        case let .success(employees):
+            return employees
+        case .failure(_):
+            print("failed to load employees")
+            return []
+        }
     }
 }
