@@ -15,7 +15,7 @@ protocol HttpClient{
 
 class EmployeeHttpClient: HttpClient{
     func getEmployees() -> AnyPublisher<(data: Data, response: URLResponse), EmployeeHttpError>{
-        let EMPLOYEE_URL = "http://dummy.restapiexample.com/api/v1/employes"
+        let EMPLOYEE_URL = "http://dummy.restapiexample.com/api/v1/employees"
         
         let url = URL(string: EMPLOYEE_URL)!
         
@@ -23,6 +23,15 @@ class EmployeeHttpClient: HttpClient{
         return session.dataTaskPublisher(for: URLRequest(url:url))
             .mapError({ (error) in
                 return EmployeeHttpError.error(error.localizedDescription)
+            })
+            .flatMap({ (result) -> AnyPublisher<(data: Data, response: URLResponse),EmployeeHttpError> in
+                let (_,response) = result
+                guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
+                    return Fail(error: EmployeeHttpError.error("Server Failure")).eraseToAnyPublisher()
+                }
+                return Just(result)
+                    .setFailureType(to: EmployeeHttpError.self)
+                    .eraseToAnyPublisher()
             })
         .eraseToAnyPublisher()
     }
