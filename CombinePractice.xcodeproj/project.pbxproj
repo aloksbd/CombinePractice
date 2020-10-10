@@ -16,6 +16,7 @@
 		5C971E7B2530BF59004CCB3C /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E7A2530BF59004CCB3C /* Employee.swift */; };
 		5C971E7D2530BFA5004CCB3C /* EmployeHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */; };
 		5C971E7F25315F7C004CCB3C /* EmployeeHttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E7E25315F7C004CCB3C /* EmployeeHttpError.swift */; };
+		5C971E81253173DA004CCB3C /* EmployeeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C971E80253173DA004CCB3C /* EmployeeLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5C971E7A2530BF59004CCB3C /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeHttpClient.swift; sourceTree = "<group>"; };
 		5C971E7E25315F7C004CCB3C /* EmployeeHttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeHttpError.swift; sourceTree = "<group>"; };
+		5C971E80253173DA004CCB3C /* EmployeeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				5C971E7A2530BF59004CCB3C /* Employee.swift */,
 				5C971E7C2530BFA5004CCB3C /* EmployeHttpClient.swift */,
 				5C971E7E25315F7C004CCB3C /* EmployeeHttpError.swift */,
+				5C971E80253173DA004CCB3C /* EmployeeLoader.swift */,
 			);
 			path = CombinePractice;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				5C971E6B2530BF1B004CCB3C /* ViewController.swift in Sources */,
 				5C971E7B2530BF59004CCB3C /* Employee.swift in Sources */,
+				5C971E81253173DA004CCB3C /* EmployeeLoader.swift in Sources */,
 				5C971E672530BF1B004CCB3C /* AppDelegate.swift in Sources */,
 				5C971E692530BF1B004CCB3C /* SceneDelegate.swift in Sources */,
 				5C971E7F25315F7C004CCB3C /* EmployeeHttpError.swift in Sources */,
