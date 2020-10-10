@@ -9,6 +9,8 @@
 import Foundation
 import Combine
 
+typealias EmployeeLoaderResult = Result<[Employee], Error>
+
 protocol EmployeeLoader {
     func load(publisher: Publishers.Map<NotificationCenter.Publisher, [Employee]>)
 }
@@ -28,11 +30,16 @@ class RemoteEmployeeLoader: EmployeeLoader{
     func load(publisher: Publishers.Map<NotificationCenter.Publisher, [Employee]>){
         cancellable = client?.getEmployees()
             .sink(receiveCompletion: { completion in
-                NotificationCenter.default.post(name: .getEmployees, object: [])
+                switch completion{
+                case let .failure(error):
+                    NotificationCenter.default.post(name: .getEmployees, object: EmployeeLoaderResult.failure(error))
+                default:
+                    break
+                }
                 
             }, receiveValue: {result in
                     let employees = try? self.map(data: result.data)
-                    NotificationCenter.default.post(name: .getEmployees, object: employees)
+                NotificationCenter.default.post(name: .getEmployees, object: EmployeeLoaderResult.success(employees ?? []))
                 
             })
     }

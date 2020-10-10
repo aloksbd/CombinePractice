@@ -14,7 +14,6 @@ extension Notification.Name {
 }
 
 class ViewController: UIViewController {
-    private var loader: EmployeeLoader?
     private var employees = [Employee](){
         didSet{
             print(employees)
@@ -25,20 +24,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let employeePublisher = NotificationCenter.Publisher(center: .default, name: .getEmployees, object: nil)
-        .map { (notification) -> [Employee] in
-            return (notification.object as? [Employee]) ?? []
-        }
-        
-        let client = EmployeeHttpClient()
-        loader = RemoteEmployeeLoader(client: client)
-        
         let employeeSubscriber = Subscribers.Assign(object: self, keyPath: \.employees)
-        employeePublisher.subscribe(employeeSubscriber)
         
-        loader?.load(publisher: employeePublisher)
+        let _ = EmployeesModel(subscriber: employeeSubscriber)
     }
-
 
 }
 
